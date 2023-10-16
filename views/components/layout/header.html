@@ -1,0 +1,10 @@
+{% set header = cms.menu('navigation') %}
+
+<header class="header">
+
+    <ul>
+        {% for item in header.items %}
+        <li><a href="{{ item.link }}">{{ item.label }}</a></li>
+        {% endfor %}
+    </ul>
+</header>

@@ -1,0 +1,19 @@
+.grid {
+    display: grid;
+    column-gap: var(--grid-column-gap);
+}
+.container {
+    --grid-column: 16;
+    --container-padding: 6rem;
+
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    max-width: var(--container-width);
+}
+.container.fluid {
+    max-width: none;
+}
+.container.grid {
+    grid-template-columns: repeat(var(--grid-column), 1fr);
+}
