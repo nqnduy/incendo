@@ -17,3 +17,18 @@
 .container.grid {
     grid-template-columns: repeat(var(--grid-column), 1fr);
 }
+.btn {
+    padding: 1rem 3rem;
+    border-radius: 100vmax;
+    border: 1px solid #DB5E1E;
+    color: #fff;
+    font-family: 'Barlow-Bold';
+    line-height: normal;
+    background: linear-gradient(180deg, #FABB14 0%, #DB5E1E 100%);
+}
+.fw-bold {
+    font-family: 'Barlow-Bold';
+}
+.fw-black {
+    font-family: 'Barlow-Black';
+}

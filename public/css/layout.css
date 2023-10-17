@@ -13,10 +13,11 @@ html {
     font-family: 'Barlow-Regular';
     font-size: var(--global-fs);
     color: black;
+}
+body {
     font-size: 2rem;
     line-height: 1.6;
 }
-
 a {
     text-decoration: none;
     color: inherit;
@@ -33,4 +34,25 @@ button, input, textarea {
 
 button {
     cursor: pointer;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }

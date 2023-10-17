@@ -1,10 +1,53 @@
 {% set header = cms.menu('navigation') %}
-
 <header class="header">
-
-    <ul>
-        {% for item in header.items %}
-        <li><a href="{{ item.link }}">{{ item.label }}</a></li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <div class="header__wrap">
+            <div class="header__wrap-left">
+                <a href="/" class="header__logo">
+                    {% include 'components/icons/logo.html' %}
+                </a>
+                <ul class="header__nav">
+                    {% for item in header.items %}
+                    <li class="header__nav-item fw-bold"><a href="{{ item.link }}">{{ item.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="header__wrap-right">
+                <button class="btn">Schedule a chat</button>
+            </div>
+        </div>
+    </div>
 </header>
+
+<style>
+    .header {
+
+    }
+    .header__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 -6.8rem;
+        padding: 3.6rem 8.3rem;
+        border: 1px solid var(--primary-yl);
+        border-end-end-radius: 5rem;
+        border-end-start-radius: 5rem;
+    }
+    .header__wrap-left {
+        display: flex;
+        align-items: center;
+        gap: 5.3rem;
+    }
+    .header__logo {
+        width: 18.5rem;
+    }
+    .header__nav {
+        display: flex;
+        align-items: center;
+        gap: 4.1rem;
+    }
+    .header__nav-item {
+        text-transform: uppercase;
+        line-height: normal;
+    }
+</style>

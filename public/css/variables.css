@@ -4,6 +4,7 @@
     --grid-column-gap: 1rem;
     --container-padding: 20rem;
     --global-fs: 0.5787037037vw;
+    --primary-yl: #FEE6A6;
 }
 
 @media only screen and (min-width: 1728px) {
