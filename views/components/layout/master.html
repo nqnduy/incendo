@@ -11,7 +11,8 @@
     <meta name="title" content="{{ settings.meta_title }}" />
     <meta name="description" content="{{ settings.meta_description }}">
 
-    {% include 'components/layout/css.html' %}
+    {{ asset('css/index.css') | stylesheet_tag }}
+    {{ asset('js/libs/_jquery.js') | script_tag }}
   </head>
   <body>
     {% include 'components/layout/header.html' %}

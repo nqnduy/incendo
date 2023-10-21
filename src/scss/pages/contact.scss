@@ -1,0 +1,49 @@
+@import '../core/variables';
+
+.contactpage {
+    .contact {
+        &__wrap {
+            padding-top: 26.5rem;
+            padding-bottom: 15rem;
+            &-info {
+                grid-column: 1/6;
+            }
+            &-form {
+                grid-column: 7/13;
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                }
+            }
+        }
+        &__info {
+            &-title {
+                margin-bottom: 2rem;
+                max-width: 47rem;
+            }
+            &-sub {
+                margin-bottom: 6.1rem;
+            }
+            &-address {
+                display: flex;
+                align-items: end;
+                gap: 1.5rem;
+                margin-bottom: 2.8rem;
+                svg {
+                    width: 2.4rem;
+                }
+                span {
+                    line-height: normal;
+                    color: $secondary-cl;
+                }
+            }
+        }
+        &__form {
+            &-btn {
+                margin-top: 6.7rem;
+                align-self: self-end;
+            }
+        }
+    }
+}

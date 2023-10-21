@@ -1,0 +1,115 @@
+@import './variables';
+
+.grid {
+    display: grid;
+    column-gap: var(--grid-column-gap);
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    max-width: $container-width;
+    &.fluid {
+        max-width: none;
+    }
+    &.grid {
+        grid-template-columns: repeat(var(--grid-column), 1fr);
+    }
+}
+.btn {
+    padding: 0.9rem 3rem 1rem 3rem;
+
+    font-family: 'Barlow-Bold';
+    font-size: 2rem;
+    line-height: normal;
+    color: #fff;
+
+    border: 1px solid $secondary-cl;
+    border-radius: 100vmax;
+    background: linear-gradient(180deg, $primary-cl 0%, $secondary-cl 100%);
+    @include transition(0.35s ease-out);
+    &:hover {
+        border-color: $primary-cl;
+        @include main-textGradient();
+        @include transition(0.35s ease-out);
+    }
+    @include md {
+        font-size: 1.8rem;
+        padding: 0.7rem 3rem 1rem 3rem;
+    }
+}
+.fw-bold {
+    font-family: 'Barlow-Bold';
+}
+.fw-black {
+    font-family: 'Barlow-Black';
+}
+
+.txt {
+    @each $size in $txtSizes {
+        &-#{$size} {
+            @include text(var(--fs-#{$size}), var(--lh-#{$size}))
+        }
+    }
+    &-decor {
+        font-family: 'Barlow-Bold';
+        font-size: 2.5rem;
+        line-height: 1.28em;
+        @include main-textGradient(0%, 100%);
+    }
+}
+
+.hover-un {
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+    color: currentColor;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: -0.1em;
+        left: 0;
+        background-color: currentColor;
+        -webkit-transform-origin: right;
+        transform-origin: right;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: 0.6s transform cubic-bezier(0.66, 0, 0.15, 1);
+        transition: 0.6s transform cubic-bezier(0.66, 0, 0.15, 1);
+    }
+    &:hover {
+        &::after {
+            transform-origin: left;
+            -webkit-transform-origin: left;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+    }
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    label {
+        margin-bottom: 0.7rem;
+    }
+    input,
+    textarea {
+        font-size: 2rem;
+        line-height: 1.6em;
+        border: 1px solid rgba($primary-cl, .4);
+        border-radius: 2rem;
+        padding: 1.7rem 2rem;
+        box-shadow: 0rem 1.6rem 5rem 0rem rgba($secondary-cl, 0.2);
+        @include transition(0.35s ease-out);
+        &:focus {
+            border-color: $primary-cl;
+        }
+    }
+    textarea {
+        min-height: 17.6rem;
+        resize: vertical;
+    }
+}

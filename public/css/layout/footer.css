@@ -1,0 +1,71 @@
+:root {
+  --grid-column: 12;
+  --grid-column-gap: 1rem;
+  --container-padding: 20rem;
+  --global-fs: 0.5787037037vw;
+  --fs-20: 2rem;
+  --lh-20: 1.6em;
+  --fs-25: 2.5rem;
+  --lh-25: 1.28em;
+  --fs-40: 4rem;
+  --lh-40: 1.24em;
+  --fs-48: 4.8rem;
+  --lh-48: 1.02em;
+}
+@media screen and (min-width: 1728px) {
+  :root {
+    --global-fs: 10px;
+  }
+}
+@media screen and (max-width: 991px) {
+  :root {
+    --global-fs: 1vw;
+    --container-padding: 4rem;
+    --grid-column: 6;
+    --fs-20: 1.8rem;
+    --lh-20: 1.5em;
+    --fs-25: 2rem;
+    --lh-25: 1.3em;
+  }
+}
+@media screen and (max-width: 767px) {
+  :root {
+    --global-fs: 1.3vw;
+    --grid-column: 2;
+    --grid-column-gap: .5rem;
+  }
+}
+@media screen and (max-width: 476px) {
+  :root {
+    --global-fs: 2.667vw;
+    --container-padding: 3.6rem;
+  }
+}
+
+.footer__wrap {
+  padding-top: 8.3rem;
+  padding-bottom: 10.5rem;
+  border-top: 1px solid #DB5E1E;
+  grid-column: 1/13;
+  grid-template-columns: repeat(12, 1fr);
+}
+.footer__nav {
+  grid-column: 2/4;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer__nav-item {
+  text-transform: uppercase;
+  line-height: normal;
+}
+.footer__btn {
+  grid-column: 4/6;
+  align-self: start;
+  justify-self: start;
+}
+.footer__logo {
+  grid-column: 9/12;
+}
+
+/*# sourceMappingURL=footer.css.map */

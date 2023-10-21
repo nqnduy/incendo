@@ -1,0 +1,61 @@
+@import './mixins';
+
+$txtSizes: 20, 25, 40, 48;
+$container-width:  172.8rem;
+$primary-cl: #FABB14;
+$secondary-cl: #DB5E1E;
+$tertiary-cl: #FEE6A6;
+$text-cl: #231F20;
+
+$xs-min: 477px;
+$sm-min: 768px;
+$md-min: 992px;
+$lg-min: 1728px;
+
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+:root {
+    --grid-column: 12;
+    --grid-column-gap: 1rem;
+    --container-padding: 20rem;
+    --global-fs: 0.5787037037vw;
+
+    --fs-20: 2rem;
+    --lh-20: 1.6em;
+
+    --fs-25: 2.5rem;
+    --lh-25: 1.28em;
+
+    --fs-40: 4rem;
+    --lh-40: 1.24em;
+
+    --fs-48: 4.8rem;
+    --lh-48: 1.02em;
+
+    @include lg {
+        --global-fs: 10px;
+    }
+    @include md {
+        --global-fs: 1vw;
+        --container-padding: 4rem;
+        --grid-column: 6;
+
+        --fs-20: 1.8rem;
+        --lh-20: 1.5em;
+
+
+        --fs-25: 2rem;
+        --lh-25: 1.3em;
+    }
+    @include sm {
+        --global-fs: 1.3vw;
+        --grid-column: 2;
+        --grid-column-gap: .5rem;
+    }
+    @include xs {
+        --global-fs: 2.667vw;
+        --container-padding: 3.6rem;
+    }
+}

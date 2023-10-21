@@ -1,0 +1,354 @@
+:root {
+  --grid-column: 12;
+  --grid-column-gap: 1rem;
+  --container-padding: 20rem;
+  --global-fs: 0.5787037037vw;
+  --fs-20: 2rem;
+  --lh-20: 1.6em;
+  --fs-25: 2.5rem;
+  --lh-25: 1.28em;
+  --fs-40: 4rem;
+  --lh-40: 1.24em;
+  --fs-48: 4.8rem;
+  --lh-48: 1.02em;
+}
+@media screen and (min-width: 1728px) {
+  :root {
+    --global-fs: 10px;
+  }
+}
+@media screen and (max-width: 991px) {
+  :root {
+    --global-fs: 1vw;
+    --container-padding: 4rem;
+    --grid-column: 6;
+    --fs-20: 1.8rem;
+    --lh-20: 1.5em;
+    --fs-25: 2rem;
+    --lh-25: 1.3em;
+  }
+}
+@media screen and (max-width: 767px) {
+  :root {
+    --global-fs: 1.3vw;
+    --grid-column: 2;
+    --grid-column-gap: .5rem;
+  }
+}
+@media screen and (max-width: 476px) {
+  :root {
+    --global-fs: 2.667vw;
+    --container-padding: 3.6rem;
+  }
+}
+
+:root {
+  --grid-column: 12;
+  --grid-column-gap: 1rem;
+  --container-padding: 20rem;
+  --global-fs: 0.5787037037vw;
+  --fs-20: 2rem;
+  --lh-20: 1.6em;
+  --fs-25: 2.5rem;
+  --lh-25: 1.28em;
+  --fs-40: 4rem;
+  --lh-40: 1.24em;
+  --fs-48: 4.8rem;
+  --lh-48: 1.02em;
+}
+@media screen and (min-width: 1728px) {
+  :root {
+    --global-fs: 10px;
+  }
+}
+@media screen and (max-width: 991px) {
+  :root {
+    --global-fs: 1vw;
+    --container-padding: 4rem;
+    --grid-column: 6;
+    --fs-20: 1.8rem;
+    --lh-20: 1.5em;
+    --fs-25: 2rem;
+    --lh-25: 1.3em;
+  }
+}
+@media screen and (max-width: 767px) {
+  :root {
+    --global-fs: 1.3vw;
+    --grid-column: 2;
+    --grid-column-gap: .5rem;
+  }
+}
+@media screen and (max-width: 476px) {
+  :root {
+    --global-fs: 2.667vw;
+    --container-padding: 3.6rem;
+  }
+}
+
+.grid {
+  display: grid;
+  column-gap: var(--grid-column-gap);
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  max-width: 172.8rem;
+}
+.container.fluid {
+  max-width: none;
+}
+.container.grid {
+  grid-template-columns: repeat(var(--grid-column), 1fr);
+}
+
+.btn {
+  padding: 0.9rem 3rem 1rem 3rem;
+  font-family: "Barlow-Bold";
+  font-size: 2rem;
+  line-height: normal;
+  color: #fff;
+  border: 1px solid #DB5E1E;
+  border-radius: 100vmax;
+  background: linear-gradient(180deg, #FABB14 0%, #DB5E1E 100%);
+  transition: 0.35s ease-out;
+  -webkit-transition: 0.35s ease-out;
+  -moz-transition: 0.35s ease-out;
+  -ms-transition: 0.35s ease-out;
+  -o-transition: 0.35s ease-out;
+}
+.btn:hover {
+  border-color: #FABB14;
+  background: linear-gradient(180deg, #DB5E1E 0%, #FABB14 93.27%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.35s ease-out;
+  -webkit-transition: 0.35s ease-out;
+  -moz-transition: 0.35s ease-out;
+  -ms-transition: 0.35s ease-out;
+  -o-transition: 0.35s ease-out;
+}
+@media screen and (max-width: 991px) {
+  .btn {
+    font-size: 1.8rem;
+    padding: 0.7rem 3rem 1rem 3rem;
+  }
+}
+
+.fw-bold {
+  font-family: "Barlow-Bold";
+}
+
+.fw-black {
+  font-family: "Barlow-Black";
+}
+
+.txt-20 {
+  font-size: var(--fs-20);
+  line-height: var(--lh-20);
+}
+.txt-25 {
+  font-size: var(--fs-25);
+  line-height: var(--lh-25);
+}
+.txt-40 {
+  font-size: var(--fs-40);
+  line-height: var(--lh-40);
+}
+.txt-48 {
+  font-size: var(--fs-48);
+  line-height: var(--lh-48);
+}
+.txt-decor {
+  font-family: "Barlow-Bold";
+  font-size: 2.5rem;
+  line-height: 1.28em;
+  background: linear-gradient(180deg, #DB5E1E 0%, #FABB14 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-un {
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+  color: currentColor;
+}
+.hover-un::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -0.1em;
+  left: 0;
+  background-color: currentColor;
+  -webkit-transform-origin: right;
+  transform-origin: right;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: 0.6s transform cubic-bezier(0.66, 0, 0.15, 1);
+  transition: 0.6s transform cubic-bezier(0.66, 0, 0.15, 1);
+}
+.hover-un:hover::after {
+  transform-origin: left;
+  -webkit-transform-origin: left;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+.form-field label {
+  margin-bottom: 0.7rem;
+}
+.form-field input,
+.form-field textarea {
+  font-size: 2rem;
+  line-height: 1.6em;
+  border: 1px solid rgba(250, 187, 20, 0.4);
+  border-radius: 2rem;
+  padding: 1.7rem 2rem;
+  box-shadow: 0rem 1.6rem 5rem 0rem rgba(219, 94, 30, 0.2);
+  transition: 0.35s ease-out;
+  -webkit-transition: 0.35s ease-out;
+  -moz-transition: 0.35s ease-out;
+  -ms-transition: 0.35s ease-out;
+  -o-transition: 0.35s ease-out;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #FABB14;
+}
+.form-field textarea {
+  min-height: 17.6rem;
+  resize: vertical;
+}
+
+@font-face {
+  font-family: "Barlow-Black";
+  src: url("../fonts/BarlowSemiCondensed-Black.woff2") format("woff2"), url("../fonts/BarlowSemiCondensed-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Barlow-Bold";
+  src: url("../fonts/BarlowSemiCondensed-Bold.woff2") format("woff2"), url("../fonts/BarlowSemiCondensed-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Barlow-Regular";
+  src: url("../fonts/BarlowSemiCondensed-Regular.woff2") format("woff2"), url("../fonts/BarlowSemiCondensed-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: unset;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: none;
+  -webkit-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+  font-family: "Barlow-Regular";
+  font-size: var(--global-fs);
+  color: #231F20;
+}
+
+body {
+  font-size: var(--fs-20);
+  line-height: var(-lh-20);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+button, input, textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  font-family: "Barlow-Regular";
+}
+
+button {
+  cursor: pointer;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/*# sourceMappingURL=index.css.map */

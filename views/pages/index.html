@@ -1,24 +1,224 @@
 {% extends 'components/layout/master' %}
 
 {% block body %}
+{{ asset('css/pages/home.css') | stylesheet_tag }}
 <div class="homepage">
   <section class="hero">
     <div class="container grid">
       <div class="hero__text">
-        <h1 class="hero__heading">Brighten up your business by working smarter...</h1>
-        <div class="hero__sub">
-          If your business is bogged down by paper trails, spreadsheets and has a reliance on key people to keep the wheels turning, we can help!
-          <br/>
+        <h1 class="hero__heading fw-bold">Brighten up your business by working smarter...</h1>
+        <div class="hero__sub txt-25">
+          If your hello is bogged down by paper trails, spreadsheets and has a reliance on key people to keep the wheels turning, we can help!
+          <br/><br/>
           We are specialists in brightening up outdated ways of working and bringing how you market your business and how you operate behind the scenes closer together.</div>
         <button class="btn">Book a Consultation</button>
+      </div>
+      <div class="hero__img">
+        {{ asset('img/home-hero.jpg') | image_tag }}
+      </div>
+      <div class="hero__bg">
+        {{ asset('img/home-hero-bg.jpg') | image_tag }}
+        <div class="hero__bg-overfill start"></div>
+        <div class="hero__bg-overfill end"></div>
+      </div>
+    </div>
+  </section>
+  <section class="booking">
+    <div class="container grid">
+      <h2 class="booking__title fw-bold">Brighten your day, your outlook and your bottom line.</h2>
+      <div class="booking__sub txt-25">
+        Welcome to a brighter, more enlightened way of performing your everyday business functions. When business continuity is paramount and improved efficiency has made it to your board agenda, let's talk.
+        <br/><br/>
+        Incendo are the specialists in transforming inefficient, clunky and unsustainable ways of working into modern, seamless and low touch business assets.
+        <br/><br/>
+        Our team of Brilliant™ Business analysts, techs and coaches are on hand to transform your business.
+      </div>
+      <button class="btn booking__btn">Book a Consultation</button>
+    </div>
+  </section>
+  <section class="whatDo">
+    <div class="container grid">
+      <div class="whatDo__titleWrap">
+        <div class="whatDo__bg heading-bg">
+          {{ asset('img/what-do-bg.png') | image_tag }}
+          <!-- <div class="whatDo__bg-overfill start" data-img="{{ asset('img/what-do-bg-start.png') }}"></div> -->
+          <!-- <div class="whatDo__bg-overfill end"></div> -->
+        </div>
+      <h3 class="whatDo__label heading-label">What we do</h3>
+        <div class="whatDo__headingWrap">
+          <h2 class="whatDo__headingSub heading-sub">Streamlining for</h2>
+          <div class="whatDo__heading heading-main">{% include 'components/icons/success.html' %}</div>
+        </div>
+      </div>
+      <div class="whatDo__media">
+        <div class="whatDo__media-inner">
+          <div class="whatDo__media-btn">
+            {% include 'components/icons/play.html' %}
+          </div>
+          <div class="whatDo__media-thumbnail">
+            {{ asset('img/what-do-thumb.jpg') | image_tag }}
+          </div>
+        <!-- <div class="whatDo__media-video"></div> -->
+        </div>
+      </div>
+      <div class="whatDo__sub">
+        Our team of Brilliant™ business analysts take you through our proven program to discover opportunities, illuminating you and your team to smarter ways of working.
+        <br/><br/>
+        Incendo then helps you to improve, remove, or automates those parts of your business that are currently casting a shadow on your business performance.
+        <br/><br/>
+        Your team no longer endure the daily grind of low value tasks such as moving documents from A to B, and your customers are no longer kept in the dark. Incendo create seamless ways of working, getting the best efficiency and outcomes from your from brightest workers, while your customers are enlightened, informed automatically throughout every interaction with your business.
+      </div>
+      <div class="whatDo__contact">
+        <div class="whatDo__contact-title txt-25 fw-bold">Now that's bright... that's a smart way of working.</div>
+        <a href="/contact.html" class="btn">Contact us</a>
+      </div>
+    </div>
+  </section>
+  <section class="whyDo">
+    <div class="container grid">
+      <div class="whyDo__titleWrap">
+        <div class="whyDo__bg heading-bg">
+          {{ asset('img/what-do-bg.png') | image_tag }}
+          <!-- <div class="whatDo__bg-overfill start" data-img="{{ asset('img/what-do-bg-start.png') }}"></div> -->
+          <!-- <div class="whatDo__bg-overfill end"></div> -->
+        </div>
+        <h3 class="whyDo__label heading-label">How we do it</h3>
+        <div class="whyDo__headingWrap">
+          <h2 class="whyDo__headingSub heading-sub">The</h2>
+          <h2 class="whyDo__heading heading-main">
+            {% include 'components/icons/smart.html' %}
+          </h2>
+          <h2 class="whyDo__headingSub heading-sub">approach</h2>
+        </div>
+      </div>
+      <div class="whyDo__sub">
+        We love to listen.
+        <br/><br/>
+        Your business is unique, there's no 'one-size fits all' approach when it comes to helping your staff and your business to work smart.
+        <br/><br/>
+        Our Brilliant™ business analysts listen to your challenges and explore your pain points. Equally we're interested to learn what's working well. We then match you to our brightest people, products and technologies.
+        <br/><br/>
+        Many customers complete the entire <span class="txt-decor">S.M.A.R.T</span> program, some simply need a guiding light to find efficiencies, while others require bright ideas around technology and automation. The good news is that we will flex to meet whatever your business requires to shine.
+      </div>
+      <div class="whyDo__contact">
+        <div class="whyDo__contact-title txt-25 fw-bold">Book a consultation</div>
+        <a href="/contact.html" class="btn">Contact us</a>
+      </div>
+      <div class="whyDo__detail">
+        <ul class="whyDo__detail-tab">
+          <li class="whyDo__detail-tab-item active">
+            <div class="whyDo__detail-tab-text">
+              <span>S</span>
+              <h4 class="fw-bold">Search</h4>
+            </div>
+            {% include 'components/icons/arrow.html' %}
+          </li>
+          <li class="whyDo__detail-tab-item">
+            <div class="whyDo__detail-tab-text">
+              <span>M</span>
+              <h4 class="fw-bold">Modernise</h4>
+            </div>
+            {% include 'components/icons/arrow.html' %}
+          </li>
+          <li class="whyDo__detail-tab-item">
+            <div class="whyDo__detail-tab-text">
+              <span>A</span>
+              <h4 class="fw-bold">Automate</h4>
+            </div>
+            {% include 'components/icons/arrow.html' %}
+          </li>
+          <li class="whyDo__detail-tab-item">
+            <div class="whyDo__detail-tab-text">
+              <span>R</span>
+              <h4 class="fw-bold">Review</h4>
+            </div>
+            {% include 'components/icons/arrow.html' %}
+          </li>
+          <li class="whyDo__detail-tab-item">
+            <div class="whyDo__detail-tab-text">
+              <span>T</span>
+              <h4 class="fw-bold">Transition</h4>
+            </div>
+            {% include 'components/icons/arrow.html' %}
+          </li>
+        </ul>
+        <div class="whyDo__detail-content">
+          <div class="whyDo__detail-content-item active">
+            <h4 class="whyDo__detail-content-title txt-48">Enlightening you to plan ahead</h4>
+            <div class="whyDo__detail-content-desc">
+              You know your business best, so our team of Brilliant™ business analysts take a collaborative approach to investigate areas of the business to seek out inefficiencies, roadblocks and unsustainable ways of working.
+              <br/><br/>
+              Our Brilliant™ business analysts will:
+  ​            <br/><br/>
+              <ul>
+                <li>Listen to you, your customers and your staff.</li>
+                <li>Roll up our sleeves, get alongside you and your team and experience your business for ourselves.</li>
+                <li>Benchmark your capabilities.</li>
+                <li>Highlight opportunities to improve.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whyDo__detail-content-item">
+            <h4 class="whyDo__detail-content-title txt-48">Shine a light on a new way of working</h4>
+            <div class="whyDo__detail-content-desc">
+              Many businesses are stuck doing what they do because they have always done it like that.
+              <br/><br/>
+              Our Brilliant™ business analysts will:
+  ​            <br/><br/>
+              <ul>
+                <li>Capture how you currently work.</li>
+                <li>Recommend where it could be more efficient.</li>
+                <li>Capture new way of working.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whyDo__detail-content-item">
+            <h4 class="whyDo__detail-content-title txt-48">Next level efficiency</h4>
+            <div class="whyDo__detail-content-desc">
+              Now you have a deeper understanding of how areas of your business work you are ready to automate.
+              <br/><br/>
+              Our Brilliant™ business analysts will:
+  ​            <br/><br/>
+              <ul>
+                <li>Assist you in selecting the brightest automation technology.</li>
+                <li>Scope, specify and design exactly how the automation will work.</li>
+                <li>Implement through our network of bright technicians and technologists.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whyDo__detail-content-item">
+            <h4 class="whyDo__detail-content-title txt-48">Change for good</h4>
+            <div class="whyDo__detail-content-desc">
+              Incendo measures the resulting impact, effectiveness and value our agreed changes have had on your business through the proven 'Brighten Up' review process.
+              <br/><br/>
+              Our Brilliant™ business analysts will:
+  ​            <br/><br/>
+              <ul>
+                <li>Monitor all automation.</li>
+                <li>Listen to stakeholder feedback from your customers and staff.</li>
+                <li>Provide insights for future decision making.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="whyDo__detail-content-item">
+            <h4 class="whyDo__detail-content-title txt-48">Bright people, Brilliant business</h4>
+            <div class="whyDo__detail-content-desc">
+              Empowered and enlightened staff who are comfortable working with the new methods is the goal. Positive change can become culturally baked into your business when the team thinking, objectives and attitude are aligned.
+              <br/><br/>
+              Our Brilliant™ business analysts will:
+              <br/><br/>
+              <ul>
+                <li>Listen to them</li>
+                <li>Mentor them</li>
+                <li>Train them</li>
+                <li>Support them</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </div>
-<style>
-  .homepage {}
-  .homepage .hero {
-
-  }
-</style>
+{{ asset('js/home.js') | script_tag }}
 {% endblock %}

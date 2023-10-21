@@ -1,5 +1,36 @@
 {% extends 'components/layout/master' %}
+{% set form = cms.form('contact_us') %}
+{% import 'components/core/form' as ui %}
 
 {% block body %}
-<h2>Home</h2>
+{{ asset('css/pages/contact.css') | stylesheet_tag }}
+<div class="contactpage">
+    <div class="contact__wrap">
+        <div class="container grid">
+            <div class="contact__wrap-info">
+                <h1 class="contact__info-title txt-40 fw-bold">Brighter business is happening everywhere</h1>
+                <div class="contact__info-sub">Contact our Brilliant™ business analysts today to discuss how your business can be improved. We listen, we understand and we apply our experience, expert knowledge of business and technology and we implement Brilliant initiatives to brighten your business in every way.</div>
+                <a class="contact__info-address" href="tel:+64297596234">
+                    {% include 'components/icons/phone.html' %}
+                    <span class="hover-un">+64 29 759 6234</span>
+                </a>
+                <a class="contact__info-address" href="mailto:contact@incendo.co.nz">
+                    {% include 'components/icons/email.html' %}
+                    <span class="hover-un">contact@incendo.co.nz</span>
+                </a>
+            </div>
+            <div class="contact__wrap-form">
+                <form id="" method="POST" action="{{ request.url }}" enctype="multipart/form-data" class="contact__wrap-formWrap">
+                    {{ csrf_field() | raw }}
+                    {{ honeypot_field() | raw }}
+                    <input type="hidden" name="_form" value="{{ form.handle }}">
+                    {% for field in form.fields %}
+                        {{ ui.field(field) }}
+                    {% endfor %}
+                    <button class="contact__form-btn btn" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

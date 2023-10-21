@@ -1,0 +1,28 @@
+{# Input #}
+{% macro input(data) %}
+    <input type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required %} required {% endif %} class="" />
+{% endmacro %}
+
+{# Textarea #}
+{% macro textarea(data) %}
+    <textarea type="{{ data.type }}" name="{{ data.name }}" value="{{ data.value }}" placeholder="{{ data.placeholder }}" {% if data.required %} required {% endif %} class=" " ></textarea>
+{% endmacro %}
+
+{# Error Messages #}
+{% macro errors(data) %}
+    <span class="">{{ data }}</span>
+{% endmacro %}
+
+{# Form Field #}
+{% macro field(data) %}
+    <div class="form-field">
+        <label for="{{ data.name }}" class="">{{ data.label }}{% if data.required %} <span>*</span> {% endif %}</label>
+        {% if data.type == 'textarea' %}
+            {{ _self.textarea(data) }}
+        {% else %}
+            {{ _self.input(data) }}
+        {% endif %}
+        <span>{{ data.help_text | escape }}</span>
+        {{ _self.errors(data.errors) }}
+    </div>
+{% endmacro %}

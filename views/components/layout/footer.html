@@ -1,1 +1,18 @@
-<footer class="footer"></footer>
+{% set nav = cms.menu('navigation') %}
+
+<footer class="footer">
+    <div class="container grid">
+        <div class="footer__wrap grid">
+            <ul class="footer__nav">
+                {% for item in nav.items %}
+                <li class="footer__nav-item hover-un"><a href="{{ item.href }}">{{ item.label }}</a></li>
+                {% endfor %}
+            </ul>
+            <button class="footer__btn btn">Schedule a chat</button>
+            <a href="/" class="footer__logo">
+                {% include 'components/icons/logo.html' %}
+            </a>
+        </div>
+    </div>
+    {{ asset('css/layout/footer.css') | stylesheet_tag }}
+</footer>
