@@ -9,6 +9,10 @@
             padding-top: 18.3rem;
             padding-bottom: 16.5rem;
         }
+        @include sm {
+            padding-top: 11.5rem;
+            padding-bottom: 9.3rem;
+        }
         &__text {
             position: relative;
             z-index: 1;
@@ -20,6 +24,12 @@
                 grid-area: 1/1/2/4;
                 margin-right: 5rem;
             }
+            @include sm {
+                grid-area: 2/1/3/3;
+                margin-right: 0;
+                display: flex;
+                flex-direction: column;
+            }
         }
         &__heading {
             font-size: 4.372rem;
@@ -29,11 +39,19 @@
                 font-size: 3.6rem;
                 margin-bottom: 1.2rem;
             }
+            @include sm {
+                font-size: 3rem;
+                line-height: 1em;
+                margin-bottom: 1.4rem;
+            }
         }
         &__sub {
             margin-bottom: 4.4rem;
             @include md {
                 margin-bottom: 2.6rem;
+            }
+            @include sm {
+                margin-bottom: 3.8rem;
             }
         }
         &__img {
@@ -48,6 +66,13 @@
                 margin-right: -4rem;
                 margin-left: 4rem;
                 align-self: center;
+            }
+            @include sm {
+                grid-area: 1/1/2/3;
+                margin: 0 -1.6rem 2.3rem;
+                max-height: 28rem;
+                display: flex;
+                align-items: center;
             }
         }
         &__bg {
@@ -77,12 +102,28 @@
                     display: none;
                 }
             }
+            @include sm {
+                grid-area: 1/1/3/3;
+                margin: -31.2rem -25.7rem -12.4rem -7.1rem;
+                padding: {
+                    top: 33rem;
+                    bottom: 8.7rem;
+                }
+            }
+        }
+        &__btn {
+            @include sm {
+                margin: 0 -1.6rem;
+            }
         }
     }
     .booking {
         padding-bottom: 23.5rem;
         @include md {
             padding-bottom: 18.5rem;
+        }
+        @include sm {
+            padding-bottom: 5.4rem;
         }
         &__title {
             grid-area: 1/1/2/5;
@@ -94,17 +135,29 @@
             @include md {
                 align-self: self-end;
             }
+            @include sm {
+                grid-area: 1/1/2/3;
+                font-size: 3rem;
+                line-height: 1em;
+                margin-bottom: 3rem;
+            }
         }
         &__sub {
             grid-area: 1/6/3/13;
             @include md {
                 grid-area: 1/4/3/7;
             }
+            @include sm {
+                grid-area: 2/1/3/3;
+            }
         }
         &__btn {
             grid-area: 2/1/3/5;
             align-self: self-start;
             justify-self: self-start;
+            @include sm {
+                display: none;
+            }
         }
     }
     .heading {
@@ -114,6 +167,10 @@
             font-family: 'Barlow-Bold';
             margin-bottom: 0.3rem;
             text-transform: uppercase;
+            @include sm {
+                font-size: 1.2rem;
+                line-height: normal;
+            }
         }
         &-sub {
             font-size: 10rem;
@@ -135,6 +192,14 @@
             @include md {
                 font-size: 7rem;
             }
+            @include sm {
+                font-size: 2.55rem;
+                &::before {
+                    top: 8%;
+                    width: 1rem;
+                    height: 1px;
+                }
+            }
         }
         &-bg {
             position: absolute;
@@ -146,6 +211,11 @@
                 right: -4rem;
                 top: 8rem;
             }
+            @include sm {
+                left: -4.6rem;
+                right: -24.5rem;
+                top: 4rem;
+            }
         }
         &-main {
             position: relative;
@@ -156,12 +226,19 @@
         @include md {
             padding-bottom: 18rem;
         }
+        @include sm {
+            padding-bottom: 10.5rem;
+        }
         &__titleWrap {
             grid-column: 1/13;
             padding: 0 3rem;
             position: relative;
             @include md {
                 grid-column: 1/7;
+            }
+            @include sm {
+                grid-column: 1/3;
+                padding: 0;
             }
         }
         &__bg {
@@ -190,12 +267,21 @@
             @include md {
                 margin: -10.3rem;
             }
+            @include sm {
+                margin: -4rem;
+            }
         }
         &__headingSub {
             margin-left: 8.2rem;
+            @include sm {
+                margin-left: 0;
+            }
         }
         &__label {
             margin-left: 8.2rem;
+            @include sm {
+                margin-left: 0;
+            }
         }
         &__media {
             grid-column: 3/11;
@@ -207,6 +293,9 @@
                 position: relative;
                 border-radius: 1.8rem;
                 overflow: hidden;
+                @include sm {
+                    border-radius: 1rem;
+                }
             }
             &-btn {
                 position: absolute;
@@ -216,6 +305,10 @@
                 grid-column: 2/6;
                 margin: 6.6rem 0;
             }
+            @include sm {
+                grid-column: 1/3;
+                margin: 3.65rem -1.6rem 3rem;
+            }
         }
         &__sub {
             grid-column: 2/12;
@@ -223,6 +316,10 @@
             @include md {
                 grid-column: 2/6;
                 margin: 0 -6rem 7rem;
+            }
+            @include sm {
+                grid-column: 1/3;
+                margin: 0 0 3rem;
             }
         }
         &__contact {
@@ -234,10 +331,29 @@
             &-title {
                 color: $secondary-cl;
                 text-transform: uppercase;
+                br {
+                    display: none;
+                    @include sm {
+                        display: block;
+                    }
+                }
+            }
+            &-btn {
+                text-align: center;
+                margin: 0 -1.6rem;
             }
             @include md {
                 grid-column: 2/6;
                 margin: 0 -6rem;
+            }
+            @include sm {
+                grid-column: 1/3;
+                justify-self: self-start;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                gap: 3rem;
+                margin: 0;
             }
         }
     }
@@ -245,6 +361,9 @@
         padding-bottom: 54rem;
         @include md {
             padding-bottom: 20rem;
+        }
+        @include sm {
+            padding-bottom: 6.7rem;
         }
         &__titleWrap {
             grid-column: 1/13;
@@ -254,15 +373,28 @@
                 grid-column: 1/7;
                 margin-bottom: 10rem;
             }
+            @include sm {
+                grid-column: 1/3;
+                margin-bottom: 3rem;
+            }
         }
         &__heading {
             margin: -16.96rem;
             @include md {
                 margin: -11.96rem;
             }
+            @include sm {
+                margin: -5.4rem;
+            }
         }
         &__label {
             margin-left: 9.8rem;
+            @include md {
+                margin-left: 7.5rem;
+            }
+            @include sm {
+                margin-left: 0rem;
+            }
         }
         &__headingSub {
             &:first-child {
@@ -276,13 +408,36 @@
                     display: none;
                 }
             }
+            @include md {
+                &:first-child {
+                    margin-left: 7.5rem;
+                }
+                &:last-child {
+                    margin-right: 7.5rem;
+                }
+            }
+            @include sm {
+                &:first-child {
+                    margin-left: 0;
+                    margin-bottom: 1.2rem;
+                }
+                &:last-child {
+                    margin-top: 0.5rem;
+                    margin-right: 0;
+                }
+            }
         }
         &__sub {
+            position: relative;
             grid-column: 1/13;
             margin-bottom: 7rem;
             @include md {
                 grid-column: 2/6;
                 margin: 0 -6rem 7rem;
+            }
+            @include sm {
+                grid-column: 1/3;
+                margin: 0 0 6.7rem;
             }
         }
         &__contact {
@@ -299,6 +454,17 @@
             @include md {
                 grid-column: 2/6;
                 margin: 0 -6rem 7rem;
+            }
+            @include sm {
+                grid-column: 1/3;
+                margin: 0;
+                width: 100%;
+                align-items: stretch;
+                text-align: center;
+                flex-direction: column;
+                &-btn {
+                    margin: 0 -1.6rem;
+                }
             }
         }
         &__detail {
@@ -315,11 +481,56 @@
                 display: flex;
                 flex-direction: column;
                 gap: 2.2rem;
+                @include sm {
+                    gap: 1rem;
+                }
                 &-item {
+                    cursor: pointer;
+                    .accordion-content {
+                        display: none;
+                    }
+                    svg {
+                        width: 1.7rem;
+                        color: $secondary-cl;
+                        @include sm {
+                            width: 1.9rem;
+                            @include transform(translateX(50%) rotate(90deg));
+                            color: $text-cl;
+                            @include transition(0.35s ease-out);
+                        }
+                    }
+                    &.active {
+                        h4 {
+                            font-style: italic;
+                        }
+                        @include sm {
+                            h4 {
+                                font-style: normal;
+                            }
+                            svg {
+                                @include transition(0.35s ease-out);
+                                @include transform(translateX(50%) rotate(-90deg));
+                            }
+                        }
+                    }
+                    @include sm {
+                        padding: 2rem 3rem 0.6rem;
+                        border-radius: 1rem;
+                        border: 1px solid $primary-cl;
+                        box-shadow: 0rem .4rem 1rem 0rem rgba($secondary-cl, 0.2);
+                        .accordion-title {
+                            margin-bottom: 1.4rem;
+                        }
+                        .accordion-content {
+                            display: block;
+                            padding-bottom: 2.4rem;
+                        }
+                    }
+                }
+                &-inner {
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    cursor: pointer;
                 }
                 &-text {
                     display: flex;
@@ -337,13 +548,13 @@
                         color: $secondary-cl;
                     }
                 }
-                svg {
-                    width: 1.7rem;
-                }
             }
             &-content {
                 display: grid;
                 grid-template-columns: 1fr;
+                @include sm {
+                    display: none;
+                }
                 &-item {
                     grid-area: 1/1/2/2;
                     height: auto;
@@ -360,9 +571,19 @@
                     max-width: 43.2rem;
                     margin-bottom: 3rem;
                     @include main-textGradient();
+                    @include sm {
+                        font-size: 2.5rem;
+                        line-height: 1.2em;
+                        margin-bottom: 2rem;
+                        font-family: 'Barlow-Bold';
+                        max-width: none;
+                    }
                 }
                 &-desc {
                     max-width: 49.6rem;
+                    @include sm {
+                        max-width: none;
+                    }
                     li {
                         position: relative;
                         display: flex;
@@ -376,11 +597,29 @@
                             border-radius: 50%;
                             background-color: $text-cl;
                         }
+                        @include sm {
+                            padding-left: 2.45rem;
+                            &::before {
+                                top: .6em;
+                                left: .95rem;
+                                @include size(.35rem);
+                            }
+                        }
                     }
                 }
             }
             @include md {
                 grid-column:1/7;
+                padding: 6rem;
+            }
+            @include sm {
+                display: block;
+                grid-row: 3/4;
+                grid-column: 1/3;
+                padding: 0;
+                border: none;
+                box-shadow: none;
+                margin-bottom: 6.7rem;
             }
         }
     }

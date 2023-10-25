@@ -32,7 +32,7 @@ $lg-max: ($lg-min - 1); // Large Desktop
     --lh-40: 1.24em;
 
     --fs-48: 4.8rem;
-    --lh-48: 1.02em;
+    --lh-48: 1.2em;
 
     @include lg {
         --global-fs: 10px;
@@ -53,9 +53,14 @@ $lg-max: ($lg-min - 1); // Large Desktop
         --global-fs: 1.3vw;
         --grid-column: 2;
         --grid-column-gap: .5rem;
+
+        --fs-25: 1.8rem;
     }
     @include xs {
         --global-fs: 2.667vw;
         --container-padding: 3.6rem;
+
+        --fs-25: 1.6rem;
+        --lh-25: 1.4em;
     }
 }

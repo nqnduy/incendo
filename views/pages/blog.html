@@ -1,5 +1,36 @@
 {% extends 'components/layout/master' %}
 
 {% block body %}
-<h2>Home</h2>
+{{ asset('css/pages/blog.css') | stylesheet_tag }}
+    <div class="blogpage" name-space="blog">
+        <section class="hero">
+            <div class="container grid">
+                <h2 class="hero__title txt-40 fw-bold">Blog</h2>
+                <div class="hero__sub">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam
+                </div>
+            </div>
+        </section>
+        <section class="blog">
+            <div class="container grid">
+                <div class="blog__list">
+                    {% for post in blog.posts %}
+                        <a class="blog__item" href="{{ post.slug }}">
+                            <div class="blog__item-img">
+                                {{ post.cover_image | image_tag }}
+                            </div>
+                            <div class="blog__item-info">
+                                <div class="blog__item-title txt-25 fw-bold">{{ post.title }}</div>
+                                <div class="blog__item-desc">{{ post.description }}</div>
+                                <div class="blog__item-more fw-bold">
+                                    <span>read more</span>
+                                    {% include 'components/icons/arrow.html' %}
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
 {% endblock %}

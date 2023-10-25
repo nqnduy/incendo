@@ -1,0 +1,131 @@
+@import '../core/_variables.scss';
+.blogpage {
+    .hero {
+        padding: {
+            top: 26.5rem;
+            bottom: 11.4rem;
+        }
+        @include md {
+            padding: {
+                top: 20.5rem;
+                bottom: 8rem;
+            }
+        }
+        @include sm {
+            padding: {
+                top: 15.5rem;
+                bottom: 6rem;
+            }
+        }
+        &__title,
+        &__sub {
+            grid-column: 3/11;
+            text-align: center;
+            @include md {
+                grid-column: 2/6;
+            }
+            @include sm {
+                grid-column: 1/3;
+            }
+        }
+        &__title {
+            margin-bottom: 2rem;
+        }
+        &__content {
+            grid-column: 3/11;
+            @include md {
+                grid-column: 1/7;
+            }
+            @include sm {
+                grid-column: 1/3;
+            }
+        }
+    }
+    .blog {
+        padding-bottom: 11.2rem;
+        &__list {
+            grid-column: 3/11;
+            margin: 2.2rem -3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4.4rem;
+            @include md {
+                grid-column: 1/7;
+                margin: 2.2rem 8rem;
+            }
+            @include sm {
+                grid-column: 1/3;
+                margin: 0;
+            }
+        }
+        &__item {
+            padding: 4rem 3rem;
+            border-radius: 2rem;
+            border: 1px solid $primary-cl;
+            box-shadow: 0px 16px 50px 0px rgba($secondary-cl, 0.20);
+
+            display: grid;
+            gap: 3.3rem;
+            grid-template-columns: 38.28fr 61.72fr;
+            @include sm {
+                padding: 3rem;
+                border-radius: 1rem;
+            }
+            @include xs {
+                display: flex;
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1.5rem;
+            }
+            &-img {
+                overflow: hidden;
+                border-radius: 2rem;
+                border: 1px solid $secondary-cl;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include sm {
+                    border-radius: 1rem;
+                }
+            }
+            &-info {
+                position: relative;
+            }
+            &-title {
+                color: $secondary-cl;
+                margin-bottom: 2rem;
+                text-shadow: 0rem 0rem 2.18rem #FFF;
+            }
+            &-desc {
+                height: 3.8em;
+                overflow: hidden;
+                margin-bottom: 3.8rem;
+                position: relative;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    @include inset(0);
+                    @include size(100%);
+                    background: linear-gradient(0deg, #fff 0%, rgba(217, 217, 217, 0.00) 100%);
+                }
+            }
+            &-more {
+                color: $secondary-cl;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                svg {
+                    width: 1.1rem;
+                }
+                span {
+                    line-height: normal;
+                    font-size: 1.6rem;
+                    text-transform: uppercase;
+                    text-shadow: 0rem 0rem 2.18rem #FFF;
+                    @include hover-line();
+                    margin-right: 1.1rem;
+                }
+            }
+        }
+    }
+}

@@ -8,14 +8,30 @@
                 </a>
                 <ul class="header__nav">
                     {% for item in nav.items %}
-                    <li class="header__nav-item fw-bold"><a href="{{ item.href }}">{{ item.label }}</a></li>
+                    <li class="header__nav-item fw-bold">
+                        <a href="{{ item.href }}">{{ item.label }}</a>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
             <div class="header__wrap-right">
-                <button class="btn">Schedule a chat</button>
+                <button class="header__btn btn">Schedule a chat</button>
+                <a class="header__hamburger">
+                    <div class="header__hamburger-inner">
+                        <span class="header__hamburger-line"></span>
+                        <span class="header__hamburger-line"></span>
+                        <span class="header__hamburger-line"></span>
+                    </div>
+                </a>
             </div>
         </div>
+        <ul class="header__nav ver-mb">
+            {% for item in nav.items %}
+            <li class="header__nav-item fw-bold">
+                <a href="{{ item.href }}">{{ item.label }}</a>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
     {{ asset('css/layout/header.css') | stylesheet_tag }}
 </header>

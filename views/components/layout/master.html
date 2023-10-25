@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +11,6 @@
     <meta name="description" content="{{ settings.meta_description }}">
 
     {{ asset('css/index.css') | stylesheet_tag }}
-    {{ asset('js/libs/_jquery.js') | script_tag }}
   </head>
   <body>
     {% include 'components/layout/header.html' %}
@@ -20,6 +18,9 @@
       {% block body %}{% endblock %}
     </main>
     {% include 'components/layout/footer.html' %}
+    {{ asset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js') | script_tag }}
+    {{ asset('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js') | script_tag }}
+    {{ asset('js/main.js') | script_tag }}
   </body>
 </html>
 

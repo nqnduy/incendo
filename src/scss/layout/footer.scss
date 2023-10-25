@@ -7,6 +7,13 @@
         border-top: 1px solid $secondary-cl;
         grid-column: 1/13;
         grid-template-columns: repeat(12, 1fr);
+        @include sm {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            padding-top: 5.6rem;
+            padding-bottom: 10rem;
+        }
     }
     &__nav {
         grid-column: 2/4;
@@ -17,13 +24,29 @@
             text-transform: uppercase;
             line-height: normal;
         }
+        @include sm {
+            align-items: center;
+            &-item {
+                font-size: 2rem;
+            }
+        }
     }
     &__btn {
         grid-column: 4/6;
         align-self: start;
         justify-self: start;
+        @include md {
+            grid-column: 4/7;
+        }
+        @include sm {
+            display: none;
+        }
     }
     &__logo {
         grid-column: 9/12;
+        @include sm {
+            margin-bottom: 5.6rem;
+            width: 17rem;
+        }
     }
 }

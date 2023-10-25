@@ -1,0 +1,12 @@
+{% extends 'components/layout/master' %}
+
+{% block body %}
+{{ asset('css/pages/blog.css') | stylesheet_tag }}
+    <div class="blogpage" name-space="blog">
+        <section class="hero">
+            <div class="container grid">
+                {{ post.content | raw }}
+            </div>
+        </section>
+    </div>
+{% endblock %}

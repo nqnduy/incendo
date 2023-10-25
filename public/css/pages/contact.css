@@ -10,7 +10,7 @@
   --fs-40: 4rem;
   --lh-40: 1.24em;
   --fs-48: 4.8rem;
-  --lh-48: 1.02em;
+  --lh-48: 1.2em;
 }
 @media screen and (min-width: 1728px) {
   :root {
@@ -33,12 +33,15 @@
     --global-fs: 1.3vw;
     --grid-column: 2;
     --grid-column-gap: .5rem;
+    --fs-25: 1.8rem;
   }
 }
 @media screen and (max-width: 476px) {
   :root {
     --global-fs: 2.667vw;
     --container-padding: 3.6rem;
+    --fs-25: 1.6rem;
+    --lh-25: 1.4em;
   }
 }
 
@@ -46,8 +49,30 @@
   padding-top: 26.5rem;
   padding-bottom: 15rem;
 }
+@media screen and (max-width: 991px) {
+  .contactpage .contact__wrap {
+    padding-top: 22rem;
+    padding-bottom: 10rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contactpage .contact__wrap {
+    padding-top: 16rem;
+  }
+}
 .contactpage .contact__wrap-info {
   grid-column: 1/6;
+}
+@media screen and (max-width: 991px) {
+  .contactpage .contact__wrap-info {
+    grid-column: 1/4;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contactpage .contact__wrap-info {
+    grid-column: 1/3;
+    margin-bottom: 3.5rem;
+  }
 }
 .contactpage .contact__wrap-form {
   grid-column: 7/13;
@@ -57,12 +82,41 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+@media screen and (max-width: 991px) {
+  .contactpage .contact__wrap-form {
+    grid-column: 4/7;
+    margin-left: 5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contactpage .contact__wrap-form {
+    grid-column: 1/3;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 476px) {
+  .contactpage .contact__wrap-form form {
+    gap: 2.2rem;
+  }
+}
 .contactpage .contact__info-title {
   margin-bottom: 2rem;
   max-width: 47rem;
 }
+@media screen and (max-width: 767px) {
+  .contactpage .contact__info-title {
+    max-width: none;
+    font-size: 3rem;
+    line-height: 1em;
+  }
+}
 .contactpage .contact__info-sub {
   margin-bottom: 6.1rem;
+}
+@media screen and (max-width: 767px) {
+  .contactpage .contact__info-sub {
+    margin-bottom: 5.7rem;
+  }
 }
 .contactpage .contact__info-address {
   display: flex;
@@ -80,6 +134,12 @@
 .contactpage .contact__form-btn {
   margin-top: 6.7rem;
   align-self: self-end;
+}
+@media screen and (max-width: 991px) {
+  .contactpage .contact__form-btn {
+    align-self: stretch;
+    margin: 5.7rem -1.6rem 0;
+  }
 }
 
 /*# sourceMappingURL=contact.css.map */
